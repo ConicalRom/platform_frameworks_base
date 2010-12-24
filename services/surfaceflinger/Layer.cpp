@@ -179,11 +179,16 @@ status_t Layer::setBuffers( uint32_t w, uint32_t h,
     mReqHeight = h;
 
     mSecure = (flags & ISurfaceComposer::eSecure) ? true : false;
+<<<<<<< HEAD
 #ifdef NO_RGBX_8888
     mNeedsBlending = (info.h_alpha - info.l_alpha) > 0 && !disableBlending;
 #else
     mNeedsBlending = (info.h_alpha - info.l_alpha) > 0;
 #endif
+=======
+    mNeedsBlending = (info.h_alpha - info.l_alpha) > 0 && !disableBlending;
+
+>>>>>>> 7961b64... framework: surfaceflinger: use RGBA_8888 when RGBX_8888 isn't available
     // we use the red index
     int displayRedSize = displayInfo.getSize(PixelFormatInfo::INDEX_RED);
     int layerRedsize = info.getSize(PixelFormatInfo::INDEX_RED);
